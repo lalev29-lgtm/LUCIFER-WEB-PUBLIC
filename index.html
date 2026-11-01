@@ -1480,20 +1480,17 @@ body > #lucifer-fresh-header{
 }
 </style>
 
-<style id="lucifer-public-mobile-header-image-fix">
-@media (max-width:760px){
- body > #lucifer-mobile-header{
-  background-color:#9dbbd5!important;
-  background-image:url("https://raw.githubusercontent.com/lalev29-lgtm/LUCIFER-WEB-DEMO/main/assets/approved-header-31-10-2026.png")!important;
-  background-repeat:no-repeat!important;
-  background-position:center center!important;
-  background-size:cover!important;
- }
+
+<style id="lucifer-public-final-header-fix">
+@media(max-width:760px){
+ body > #lucifer-mobile-header{position:relative!important;isolation:isolate!important;background:#b7cbd8!important;overflow:hidden!important}
+ body > #lucifer-mobile-header > img.lucifer-mobile-backdrop{display:block!important;position:absolute!important;inset:0!important;width:100%!important;height:100%!important;object-fit:cover!important;object-position:center center!important;z-index:0!important;opacity:1!important;pointer-events:none!important}
+ body > #lucifer-mobile-header > strong,body > #lucifer-mobile-header > span{position:relative!important;z-index:1!important;text-shadow:0 1px 3px rgba(255,255,255,.85)!important}
 }
 </style>
 </head>
 <body>
-<div id="lucifer-mobile-header" role="banner" aria-label="Луцифер – Знанието е сила · Управление на риска"><strong>Луцифер – Знанието е сила</strong><span>Управление на риска</span></div>
+<div id="lucifer-mobile-header" role="banner" aria-label="Луцифер – Знанието е сила · Управление на риска"><img class="lucifer-mobile-backdrop" src="https://raw.githubusercontent.com/lalev29-lgtm/LUCIFER-WEB-DEMO/main/assets/LUCIFER_WEB_HEADER%20%281%29.png" alt="" aria-hidden="true" onerror="if(!this.dataset.fallback){this.dataset.fallback='1';this.src='https://raw.githubusercontent.com/lalev29-lgtm/LUCIFER-WEB-DEMO/main/assets/approved-header-31-10-2026.png';}"><strong>Луцифер – Знанието е сила</strong><span>Управление на риска</span></div>
 <div id="lucifer-fresh-header" role="banner" aria-label="Луцифер — Знанието е сила · Управление на риска"></div>
 <header class="brand-header"><div class="brand-title"><strong>Луцифер- Знанието е сила · Управление на риска</strong><small>LUCIFER-WEB · визуална демонстрация</small></div><div class="brand-actions"><span class="badge">Визуална проверка · не е приет</span><button type="button" id="nav-drawer-toggle" aria-expanded="false" aria-controls="nav-drawer">☰ Навигация</button></div></header>
 <div class="site-topnav" aria-label="Горно меню — публичен сайт"><button type="button" data-public="home" aria-current="page">⌂ Начало</button><button type="button" data-info="За нас">⚙ За нас</button><button type="button" data-info="Услуги">▥ Услуги</button><button type="button" data-info="Бизнес партньори">♧ Бизнес партньори</button><button type="button" data-public="contacts">✉ Контакти с нас</button><button type="button" data-info="Заявете консултация" class="accent">✚ Заявете консултация</button><button type="button" data-public="home">▷ Демо</button><button type="button" data-info="Вход">♙ Вход</button></div>
