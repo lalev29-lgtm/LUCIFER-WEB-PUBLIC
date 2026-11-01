@@ -1488,6 +1488,17 @@ body > #lucifer-fresh-header{
  body > #lucifer-mobile-header > strong,body > #lucifer-mobile-header > span{position:relative!important;z-index:1!important;text-shadow:0 1px 3px rgba(255,255,255,.85)!important}
 }
 </style>
+
+<style id="lucifer-mobile-menu-restore-20261101">
+@media(max-width:760px){
+ main.wrap{display:block!important}
+ main.wrap>nav{display:block!important;position:relative!important;box-sizing:border-box!important;width:100%!important;max-width:100%!important;min-height:44px!important;max-height:none!important;overflow:visible!important;padding:4px 8px!important;margin:0 0 8px!important;background:#092c48!important;border:1px solid #315d7c!important;border-radius:6px!important;z-index:5!important}
+ main.wrap>nav #side-collapse-toggle{display:block!important;visibility:visible!important;opacity:1!important;position:relative!important;inset:auto!important;float:none!important;width:100%!important;min-width:0!important;height:36px!important;min-height:36px!important;margin:0!important;padding:4px 12px!important;background:#1466ac!important;color:#fff!important;border:1px solid #77a8d1!important;border-radius:5px!important;font-size:17px!important;font-weight:700!important;text-align:left!important;pointer-events:auto!important;cursor:pointer!important;z-index:20!important}
+ main.wrap>nav:not(.expanded):not(.open)>:not(#side-collapse-toggle){display:none!important}
+ main.wrap>nav.expanded,main.wrap>nav.open{max-height:65dvh!important;overflow-y:auto!important}
+ main.wrap>nav.expanded>:not(#side-collapse-toggle),main.wrap>nav.open>:not(#side-collapse-toggle){display:block!important}
+}
+</style>
 </head>
 <body>
 <div id="lucifer-mobile-header" role="banner" aria-label="Луцифер – Знанието е сила · Управление на риска"><img class="lucifer-mobile-backdrop" src="https://raw.githubusercontent.com/lalev29-lgtm/LUCIFER-WEB-DEMO/main/assets/LUCIFER_WEB_HEADER%20%281%29.png" alt="" aria-hidden="true" onerror="if(!this.dataset.fallback){this.dataset.fallback='1';this.src='https://raw.githubusercontent.com/lalev29-lgtm/LUCIFER-WEB-DEMO/main/assets/approved-header-31-10-2026.png';}"></div>
@@ -1594,7 +1605,7 @@ function show(tab){
  try{sessionStorage.setItem(TAB_KEY,tab);}catch(error){/* Навигацията работи и без storage. */}
 }
 tabs.forEach(b=>b.addEventListener("click",()=>show(b.dataset.tab)));
-const sideToggle=document.getElementById("side-collapse-toggle");const workWrap=document.querySelector("main.wrap");sideToggle.addEventListener("click",()=>{
+const sideToggle=document.getElementById("side-collapse-toggle");if(window.matchMedia("(max-width:760px)").matches){sideToggle.setAttribute("aria-expanded","false");sideToggle.setAttribute("aria-label","Отвори менюто");sideToggle.textContent="☰ Меню";}const workWrap=document.querySelector("main.wrap");sideToggle.addEventListener("click",()=>{
  const mobile=window.matchMedia("(max-width:760px)").matches;
  if(mobile){
   const nav=sideToggle.closest("nav");
