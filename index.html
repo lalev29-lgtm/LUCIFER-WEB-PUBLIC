@@ -1499,6 +1499,19 @@ body > #lucifer-fresh-header{
  main.wrap>nav.expanded>:not(#side-collapse-toggle),main.wrap>nav.open>:not(#side-collapse-toggle){display:block!important}
 }
 </style>
+
+<style id="lucifer-mobile-navigation-2026-11-01">
+#lucifer-mobile-menu-trigger{display:none}
+@media(max-width:760px){
+ body > #lucifer-mobile-menu-trigger{display:block!important;position:relative!important;z-index:15!important;width:calc(100% - 16px)!important;margin:8px!important;padding:10px 14px!important;background:#1264aa!important;color:white!important;border:1px solid #78a8d3!important;border-radius:7px!important;font-size:17px!important;font-weight:700!important;text-align:left!important;cursor:pointer!important}
+ main.wrap{display:block!important}
+ main.wrap > nav#lucifer-mobile-work-nav{display:none!important;position:relative!important;z-index:16!important;box-sizing:border-box!important;width:calc(100% - 16px)!important;max-width:none!important;margin:0 8px 10px!important;padding:8px!important;background:#092c48!important;border:1px solid #477998!important;border-radius:8px!important;max-height:65dvh!important;overflow-y:auto!important;overflow-x:hidden!important;overscroll-behavior:contain!important}
+ main.wrap > nav#lucifer-mobile-work-nav.lucifer-mobile-open{display:flex!important;flex-direction:column!important;gap:4px!important}
+ main.wrap > nav#lucifer-mobile-work-nav.lucifer-mobile-open > *{display:block!important;flex-shrink:0!important}
+ main.wrap > nav#lucifer-mobile-work-nav.lucifer-mobile-open > button[data-tab]{width:100%!important;min-height:34px!important;height:auto!important;white-space:normal!important;text-align:left!important}
+ main.wrap > nav#lucifer-mobile-work-nav #side-collapse-toggle{display:none!important}
+}
+</style>
 </head>
 <body>
 <div id="lucifer-mobile-header" role="banner" aria-label="Луцифер – Знанието е сила · Управление на риска"><img class="lucifer-mobile-backdrop" src="https://raw.githubusercontent.com/lalev29-lgtm/LUCIFER-WEB-DEMO/main/assets/LUCIFER_WEB_HEADER%20%281%29.png" alt="" aria-hidden="true" onerror="if(!this.dataset.fallback){this.dataset.fallback='1';this.src='https://raw.githubusercontent.com/lalev29-lgtm/LUCIFER-WEB-DEMO/main/assets/approved-header-31-10-2026.png';}"></div>
@@ -1506,8 +1519,9 @@ body > #lucifer-fresh-header{
 <header class="brand-header"><div class="brand-title"><strong>Луцифер- Знанието е сила · Управление на риска</strong><small>LUCIFER-WEB · визуална демонстрация</small></div><div class="brand-actions"><span class="badge">Визуална проверка · не е приет</span><button type="button" id="nav-drawer-toggle" aria-expanded="false" aria-controls="nav-drawer">☰ Навигация</button></div></header>
 <div class="site-topnav" aria-label="Горно меню — публичен сайт"><button type="button" data-public="home" aria-current="page">⌂ Начало</button><button type="button" data-info="За нас">⚙ За нас</button><button type="button" data-info="Услуги">▥ Услуги</button><button type="button" data-info="Бизнес партньори">♧ Бизнес партньори</button><button type="button" data-public="contacts">✉ Контакти с нас</button><button type="button" data-info="Заявете консултация" class="accent">✚ Заявете консултация</button><button type="button" data-public="home">▷ Демо</button><button type="button" data-info="Вход">♙ Вход</button></div>
 <div id="nav-drawer" hidden><h3>Лист навигация — структура на сайта</h3><div class="drawer-columns"><div><h4>Публичен сайт</h4><button data-drawer="home">Начало</button><button data-drawer="contacts">Контакти с нас</button><p>За нас · Услуги · Бизнес партньори · Консултация · Демо · Вход</p></div><div><h4>Работна среда</h4><button data-drawer="home">Работно табло</button><button data-drawer="incidents">Инциденти</button><button data-drawer="risk">Управление на риска</button><button data-drawer="priority">Приоритет за третиране</button><p>Останалите модули — по архитектурния план.</p></div><div><h4>Административна среда</h4><p>Клиенти · Абонаменти · Финанси · Права за достъп · Системна администрация.</p><p>Достъпът предстои да бъде реализиран и защитен.</p></div></div></div>
+<button type="button" id="lucifer-mobile-menu-trigger" aria-controls="lucifer-mobile-work-nav" aria-expanded="false" aria-label="Отвори работното меню">☰ Меню</button>
 <main class="wrap">
-<nav aria-label="Странично меню — работна среда"><button type="button" class="side-collapse-toggle" id="side-collapse-toggle" aria-label="Прибери страничното меню" aria-expanded="true" title="Разгъни или прибери менюто">☰</button>
+<nav id="lucifer-mobile-work-nav" aria-label="Странично меню — работна среда"><button type="button" class="side-collapse-toggle" id="side-collapse-toggle" aria-label="Прибери страничното меню" aria-expanded="true" title="Разгъни или прибери менюто">☰</button>
 <div class="side-logo"><strong>LUCIFER-WEB</strong><small>Управление на риска</small></div>
 <button type="button" aria-selected="true" data-tab="home">⌂ Работно табло</button>
 <button type="button" aria-selected="false" data-tab="incidents">▣ Инциденти</button>
@@ -1772,6 +1786,19 @@ try{show(sessionStorage.getItem(TAB_KEY)||"home");}catch(error){show("home");}
   }
  }
  apply();window.addEventListener('resize',apply,{passive:true});window.addEventListener('orientationchange',apply,{passive:true});
+})();
+</script>
+
+<script id="lucifer-mobile-navigation-2026-11-01-controller">
+(function(){
+ const trigger=document.getElementById('lucifer-mobile-menu-trigger');
+ const nav=document.getElementById('lucifer-mobile-work-nav');
+ if(!trigger||!nav)return;
+ function toggle(open){nav.classList.toggle('lucifer-mobile-open',open);trigger.setAttribute('aria-expanded',String(open));trigger.setAttribute('aria-label',open?'Затвори работното меню':'Отвори работното меню');trigger.textContent=open?'✕ Затвори менюто':'☰ Меню';}
+ trigger.addEventListener('click',function(){toggle(!nav.classList.contains('lucifer-mobile-open'));});
+ nav.addEventListener('click',function(event){if(event.target.closest('[data-tab]'))toggle(false);});
+ window.addEventListener('resize',function(){if(window.innerWidth>760)toggle(false);},{passive:true});
+ toggle(false);
 })();
 </script>
 </body></html>
